@@ -52,10 +52,35 @@ Quantifiers are inherently greedy, meaning they match as many occurrences of par
 - { n, x }—Matches the pattern from a minimum of n number of times to a maximum of x number of times
 
 ### OR Operator
+Using the OR operator (|), the expression [abc] could be written as (a|b|c). Using our example in the grouping constructs section, we can take the original expression:
+
+- (abc):(xyz)
+And then use the OR operator to convert it to the following:
+
+- (a|b|c):(x|y|z)
+Now, both of the strings "abc:xyz" and "acb:xyz" would match, as well as "a:z", but "xyz:abc" would not.
 
 ### Character Classes
+A character class in a regex defines a set of characters, any one of which can occur in an input string to fulfill a match. We've actually already discussed some character classes. The bracket expressions outlined previously, including positive and negative character groups, are considered character classes.
+
+Here are some of the other common character classes:
+
+- .—Matches any character except the newline character (\n)
+
+- \d—Matches any Arabic numeral digit. This class is equivalent to the bracket expression [0-9].
+
+- \w—Matches any alphanumeric character from the basic Latin alphabet, including the underscore (_). This class is equivalent to the bracket expression [A-Za-z0-9_].
+
+- \s—Matches a single whitespace character, including tabs and line breaks
 
 ### Flags
+Flags are placed at the end of a regex, after the second slash, and they define additional functionality or limits for the regex. There are six optional flags that can be used, either separately or together and in any order, but these are the three you're most likely to encounter:
+
+-g—Global search: the regex should be tested against all possible matches in a string.
+
+-i—Case-insensitive search: case should be ignored while attempting a match in a string
+
+-m—Multi-line search: a multi-line input string should be treated as multiple lines
 
 ### Grouping and Capturing
 ### Bracket Expressions
