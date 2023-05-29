@@ -20,10 +20,36 @@ Briefly summarize the regex you will be describing and what you will explain. In
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
+A regex is considered a literal, so the pattern must be wrapped in slash characters (/). If we examine the “Matching a Username” regex, you'll see that this is true:
+
+/^[a-z0-9_-]{3,16}$/
+
 
 ### Anchors
+The ^ anchor signifies a string that begins with the characters that follow it. This could be in one of two formats:
+
+ - An exact string match, such as ^The, where the strings "The" or "The person" match, but "the" and "the person" do not. This is because a regex is case-sensitive.
+
+- A range of possible matches, displayed using bracket expressions.
 
 ### Quantifiers
+Quantifiers set the limits of the string that your regex matches (or an individual section of the string). They frequently include the minimum and maximum number of characters that your regex is looking for.
+
+Quantifiers are inherently greedy, meaning they match as many occurrences of particular patterns as possible. They include the following:
+
+- *—Matches the pattern zero or more times
+
+- +—Matches the pattern one or more times
+
+- ?—Matches the pattern zero or one time
+
+- {}—Curly brackets can provide three different ways to set limits for a match:
+
+- { n }—Matches the pattern exactly n number of times
+
+- { n, }—Matches the pattern at least n number of times
+
+- { n, x }—Matches the pattern from a minimum of n number of times to a maximum of x number of times
 
 ### OR Operator
 
